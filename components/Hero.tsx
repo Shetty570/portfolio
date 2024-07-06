@@ -3,7 +3,7 @@ import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
-import heropic from "../images/pic.jpeg";
+import heropic from "../images/hero.jpeg";
 import Link from "next/link";
 
 type Props = {};
@@ -25,14 +25,15 @@ function Hero({}: Props) {
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <div className="relative flex flex-col items-center justify-center">
         <BackgroundCircles />
-        <Image
-          className="rounded-full"
-          src={heropic}
-          alt="Suhas Shetty"
-          width={200}
-          height={200}
-          objectFit="cover"
-        />
+        <div className="relative w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96">
+          <Image
+            className="rounded-full"
+            src={heropic}
+            alt="Suhas Shetty"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       </div>
       <div className="z-20">
         <h2 className="text-sm uppercase text-cyan-500 tracking-[15px]">
