@@ -10,14 +10,22 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.2.13",
     "next": "14.2.4",
+    "process": "^0.11.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^6.16.0",
-    "social": "^0.4.0"
+    "social": "^0.4.0",
+    "styled-components": "^6.1.11",
+    "tailwind-merge": "^2.4.0",
+    "tech-stack-icons": "^2.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -26,6 +34,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
+    "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

@@ -1,29 +1,39 @@
 "use client";
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
 function Header({}: Props) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
-    <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="sticky top-0  pt-5 flex justify-center z-20">
       <motion.div
         initial={{
-          x: -500,
+          y: -500,
           opacity: 0,
           scale: 0.5,
         }}
         animate={{
-          x: 0,
+          y: 0,
           opacity: 1,
           scale: 1,
         }}
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-row items-center"
+        className="flex flex-row items-center space-x-3"
       >
         <SocialIcon
           url="https://www.linkedin.com/in/suhassshetty/"
@@ -31,41 +41,18 @@ function Header({}: Props) {
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://www.linkedin.com/in/suhassshetty/"
+          url="https://github.com/Shetty570"
           fgColor="gray"
           bgColor="transparent"
         />
-        <SocialIcon
-          url="https://www.linkedin.com/in/suhassshetty/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-      </motion.div>
-      <motion.div
-        initial={{
-          x: 500,
-          opacity: 0,
-          scale: 0.5,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{
-          duration: 1.5,
-        }}
-        className="flex flex-row items-center text-gray-300 cursor-pointer"
-      >
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-500">
-          Get In Touch
-        </p>
+        <Link href="#contact">
+          <SocialIcon
+            className="cursor-pointer"
+            network="email"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        </Link>
       </motion.div>
     </header>
   );

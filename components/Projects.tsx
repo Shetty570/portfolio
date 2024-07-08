@@ -1,13 +1,73 @@
+// Projects.tsx
 "use client";
 import Image from "next/image";
 import React from "react";
-import abc from "../images/hero.jpeg";
+import netflix from "../images/netflix-3.jpg";
+import insta from "../images/insta.jpg";
+import expense from "../images/expense.png";
 import { motion } from "framer-motion";
+import { StickyScroll } from "./StickyScroll";
+
+const content = [
+  {
+    title: "NETFLIX CLONE",
+    techstack:
+      "React.js, Tailwind CSS, Redux, Google Authentication, Stripe, Firebase",
+    description:
+      " Developed a Netflix-style platform with Google authentication, a beautiful home screen for movies, and a subscription page using Stripe for payments. Synchronized Stripe recurring payments with Firebase and deployed the final build using Firebase Hosting for scalability and security.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src={netflix}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "INSTA CLONE",
+    techstack: "React.js, Swagger, Node.js, Express.js, MongoDB, JWT",
+    description:
+      "Implemented core Instagram-like features including photo/video sharing, secure user logins, and profile management, enhancing security with Firebase. Engineered a ReactJS-based admin panel and NodeJS-driven backend for reliable data management and seamless server communication.",
+
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src={insta}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "EXPENSE TRACKER",
+    techstack: "React.js, CSS, Node.js, Express.js",
+    description:
+      "Crafted an all-encompassing full-stack platform that enables both individuals and collectives to track their financial activities and identify spending trends through graphical representations. Integrated unique user sessions in the app, offering a cohesive environment for users and groups to efficiently log and supervise their financial allocations and limits ",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src={expense}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+];
 
 type Props = {};
 
 function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+  const projects = [1];
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,52 +78,9 @@ function Projects({}: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-cyan-400 text-2xl">
         Projects
       </h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
-        {projects.map((project, i) => (
-          <div
-            key={i}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
-          >
-            <motion.div
-              initial={{
-                y: -300,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 1.5,
-              }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src={abc}
-                height={200}
-                width={200}
-                alt="project image"
-                className="rounded-lg"
-              />
-            </motion.div>
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center underline decoration-cyan-400">
-                Project title
-              </h4>
-              <p className="text-lg text-center md:text-left">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-              </p>
-            </div>
-          </div>
-        ))}
+      <div>
+        <StickyScroll content={content} />
       </div>
-      <div className="w-full absolute top-[30%] bg-[#b3ecec]/10 left-0 h-[500px] -skew-y-12" />
     </motion.div>
   );
 }

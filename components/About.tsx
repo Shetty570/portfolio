@@ -25,7 +25,7 @@ export default function About({}: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="relative flex-shrink-0"
+        className="relative flex-shrink-0 mb-5 md:mb-0"
       >
         <div className="w-32 h-32 md:w-48 md:h-48 lg:w-96 lg:h-96 relative">
           <Image
@@ -33,16 +33,16 @@ export default function About({}: Props) {
             alt="About Image"
             layout="fill"
             objectFit="cover"
-            className="rounded-full md:rounded-none lg:rounded-none object cover"
+            className="rounded-full md:rounded-lg lg:rounded-lg object-cover"
           />
         </div>
       </motion.div>
-      <div className="space-y-10 px-10 md:px-10">
-        <h4 className="text-4xl font-semibold ">
+      <div className="space-y-5 px-5 md:px-10 md:space-y-10 mt-5 md:mt-0">
+        <h4 className="text-2xl md:text-4xl font-semibold ">
           Here is <span className="underline decoration-cyan-400">my</span>{" "}
           background
         </h4>
-        <p className="text-sm">
+        <p className="text-sm md:text-base">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
