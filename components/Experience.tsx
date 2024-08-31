@@ -5,7 +5,7 @@ import { Timeline } from "./ui/timeline";
 function Experience() {
   const data = [
     {
-      title: "2024 - September",
+      title: "2023 - September",
       content: (
         <div>
           <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
@@ -21,7 +21,7 @@ function Experience() {
       ),
     },
     {
-      title: "2024 - May",
+      title: "2023 - May",
       content: (
         <div>
           <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
@@ -61,7 +61,7 @@ function Experience() {
             Coordinated cross-functional teams to deploy RESTful APIs, enhancing
             data exchange and performance
           </p>
-          <p className="text-white dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-white dark:text-neutral-200 text-xs md:text-xm font-normal mb-8">
             Executed full web design and development projects, combining
             frontend and backend technologies, increasing project delivery speed
             and client satisfaction
