@@ -1,5 +1,4 @@
 "use client";
-import { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -7,12 +6,11 @@ import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
-import { AuroraBackground } from "@/components/Aurora";
+
 import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    // <AuroraBackground className="w-full h-full">
     <motion.main
       initial={{ opacity: 0.0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -43,6 +41,5 @@ export default function Home() {
         <ContactMe />
       </section>
     </motion.main>
-    // </AuroraBackground>
   );
 }

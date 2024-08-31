@@ -7,7 +7,6 @@ import insta from "../images/insta.jpg";
 import expense from "../images/expense.png";
 import iphone from "../images/iPhone.jpg";
 import { motion } from "framer-motion";
-import { StickyScroll } from "./StickyScroll";
 import {
   Carousel,
   CarouselContent,

@@ -1,9 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import { ExCard } from "./ExCard";
-import { ExCard2 } from "./ExCard2";
-import Image from "next/image";
 import { Timeline } from "./ui/timeline";
 
 function Experience() {
