@@ -43,23 +43,20 @@ export default function About({}: Props) {
           background
         </h4>
         <p className="text-sm md:text-base">
-          Hi there! I&apos;m Suhas Shetty, a passionate software engineer
-          currently pursuing a Master of Science in Information Systems at
-          Northeastern University, Boston. My academic journey includes
-          comprehensive coursework in Application Engineering Design, Data
-          Science Engineering Methods, and Database Design, equipping me with
-          advanced data science techniques and architectural insights. My
-          technical skills span across front-end and back-end technologies,
-          including React.js, Express.js, Node.js, and various databases like
-          MySQL, PostgreSQL, and Firebase. Professionally, I have gained
-          valuable experience at Accenture in Bangalore, India, where I
-          developed interactive components with React.js and React Hooks,
-          optimized server performance with Node.js and Express.js, and led a
-          team to create a content management system. My projects, such as a
-          Netflix-style platform and an Instagram-like clone, showcase my
-          ability to build dynamic, scalable web applications that enhance user
-          experiences and streamline processes. Let&apos;s connect and explore
-          how I can contribute to your next project!
+          Hi there! I&apos;m Suhas Shetty, a software engineer with a strong
+          passion for Web3 technologies, currently pursuing a Master of Science
+          in Information Systems at Northeastern University. My academic
+          background includes advanced coursework in engineering design, data
+          science, and database architecture, equipping me with robust skills in
+          both front-end and back-end development using technologies like
+          React.js, Node.js, and various databases. My professional experience
+          at Accenture in Bangalore involved developing scalable web
+          applications, optimizing server performance, and leading a team to
+          create a content management system. Now, I&apos;m eager to apply my
+          skills to the decentralized future of Web3, focusing on blockchain
+          technology, smart contracts, and building innovative decentralized
+          applications (dApps). Let&apos;s connect and explore how I can
+          contribute to your next project in the Web3 space!
         </p>
       </div>
     </motion.div>

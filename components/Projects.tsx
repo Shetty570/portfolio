@@ -5,10 +5,21 @@ import React from "react";
 import netflix from "../images/netflix-3.jpg";
 import insta from "../images/insta.jpg";
 import expense from "../images/expense.png";
+import iphone from "../images/iPhone.jpg";
 import { motion } from "framer-motion";
 import { StickyScroll } from "./StickyScroll";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
+import { Card, CardContent } from "./ui/card";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
-const content = [
+const projects = [
   {
     title: "NETFLIX CLONE",
     techstack:
@@ -26,6 +37,25 @@ const content = [
         />
       </div>
     ),
+    github: "https://github.com/Shetty570/netflix",
+  },
+  {
+    title: "IPHONE LANDING PAGE",
+    techstack: "React.js, Tailwind CSS, Three.js, GSAP, Vite",
+    description:
+      "Developed dynamic 3D model rendering of the iPhone 15 Pro with Three.js and a custom video carousel using GSAP, integrated into a responsive React.js and Tailwind CSS application. Applied subtle, smooth animations via GSAP for improved user experience, ensuring device compatibility and code reusability in a Vite environment ",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src={iphone}
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+    github: "https://github.com/Shetty570/iphone-clone",
   },
   {
     title: "INSTA CLONE",
@@ -44,6 +74,7 @@ const content = [
         />
       </div>
     ),
+    github: "https://github.com/Shetty570/Insta-Clone",
   },
   {
     title: "EXPENSE TRACKER",
@@ -61,13 +92,14 @@ const content = [
         />
       </div>
     ),
+    github: "https://github.com/Shetty570/ExpenseTracker",
   },
 ];
 
 type Props = {};
 
 function Projects({}: Props) {
-  const projects = [1];
+  // const projects = [1];
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -79,7 +111,36 @@ function Projects({}: Props) {
         Projects
       </h3>
       <div>
-        <StickyScroll content={content} />
+        <Carousel className="w-full max-w-lg">
+          <CarouselContent>
+            {projects.map((project, index) => (
+              <CarouselItem key={index}>
+                <div className="p-1">
+                  <Card className="bg-gradient-to-r from-black via-blue-800 to-black border-none ">
+                    <CardContent className="flex flex-col aspect-square items-center border-transparent justify-center p-6">
+                      <span className="text-2xl font-mono font-semibold text-white p-5">
+                        {project.title}
+                      </span>
+                      <span className="text-lg font-mono font-medium pb-3 text-white">
+                        {project.techstack}
+                      </span>
+                      <div className=" w-85 h-40 ">{project.content}</div>
+
+                      <span className="text-sm md:text-base pt-3 text-white">
+                        {project.description}
+                      </span>
+                      <Button asChild>
+                        <Link href={project.github}>Github</Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </motion.div>
   );
