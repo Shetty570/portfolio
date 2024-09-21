@@ -101,7 +101,7 @@ function Experience() {
         Experience
       </h3>
       <div className="w-full flex flex-col mt-36 overflow-hidden">
-        <div className="w-full pt-15 h-[950px] overflow-y-auto">
+        <div className="w-full pt-15 h-[850px] overflow-y-auto overflow-hidden">
           <Timeline data={data} />
         </div>
       </div>
