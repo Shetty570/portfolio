@@ -28,7 +28,7 @@ export default function Home() {
       <section id="about" className="snap-start h-screen w-full">
         <About />
       </section>
-      <section id="experience" className="snap-start min-h-screen w-full">
+      <section id="experience" className="snap-start h-screen w-full">
         <Experience />
       </section>
       <section id="skills" className="snap-start h-screen w-full">
