@@ -27,29 +27,28 @@ function ContactMe({}: Props) {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-cyan-400 text-2xl">
         Contact Me
       </h3>
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
-          Feel free to send a message
-        </h4>
-        <div className="space-y-10">
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-cyan-400 h-7 w-7 animate-pulse" />
-            <p className="text-2xl">suhasshetty570@gmail.com</p>
-          </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-cyan-400 h-7 w-7 animate-pulse" />
-            <p className="text-2xl">shetty.suh@northeastern.edu</p>
-          </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-cyan-400 h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Boston, MA</p>
+      <div className="flex flex-col space-y-10 mt-32 md:mt-0 md:flex-row md:space-x-10 md:space-y-0">
+        <div className="flex flex-col space-y-10 md:w-1/2">
+          <h4 className="text-4xl font-semibold text-center md:text-left">
+            Feel free to send a message
+          </h4>
+          <div className="space-y-10">
+            <div className="flex items-center space-x-5 justify-center md:justify-start">
+              <EnvelopeIcon className="text-cyan-400 h-7 w-7 animate-pulse" />
+              <p className="text-2xl">suhasshetty570@gmail.com</p>
+            </div>
+
+            <div className="flex items-center space-x-5 justify-center md:justify-start">
+              <MapPinIcon className="text-cyan-400 h-7 w-7 animate-pulse" />
+              <p className="text-2xl">Boston, MA</p>
+            </div>
           </div>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 w-full md:w-1/2 mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
             <input
               {...register("name")}
               placeholder="Name"
@@ -76,7 +75,7 @@ function ContactMe({}: Props) {
           />
           <button
             type="submit"
-            className="bg-[#06c4c7db] py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-cyan-500 py-5 px-10 rounded-md text-white font-bold text-lg hover:bg-cyan-600 transition duration-300"
           >
             Submit
           </button>

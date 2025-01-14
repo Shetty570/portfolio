@@ -1,4 +1,3 @@
-// Projects.tsx
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -10,7 +9,6 @@ import bitcoin from "../images/bitcoin.png";
 import NFT from "../images/NFT.png";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
 import Link from "next/link";
 
 const projects = [
@@ -52,51 +50,82 @@ const projects = [
   },
 ];
 
-type Props = {};
-
-function Projects({}: Props) {
+function Projects() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className="relative flex flex-col items-center justify-center mx-auto max-w-6xl p-8"
-    >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-cyan-400 text-2xl mb-8">
-        Projects
-      </h3>
-      <div className="absolute top-32 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <Card
-            key={index}
-            className="bg-gradient-to-r from-black via-blue-800 to-black border-none"
+    <div className="relative w-full min-h-screen">
+      {/* Container with padding for all screen sizes */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16 max-w-7xl mx-auto">
+        {/* Heading */}
+        <motion.h3
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="text-center uppercase tracking-[20px] text-cyan-400 text-2xl mb-12"
+        >
+          Projects
+        </motion.h3>
+
+        {/* Scrollable container */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="relative"
+        >
+          {/* Grid container with vertical scroll on mobile */}
+          <div
+            className="
+            grid grid-cols-1 gap-6
+            max-h-[70vh] overflow-y-auto
+            sm:max-h-full sm:overflow-visible sm:grid-cols-2
+            lg:grid-cols-3
+            scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-cyan-400/80
+            snap-y snap-mandatory
+            px-2
+          "
           >
-            <CardContent className="flex flex-col items-center justify-center p-6">
-              {project.image && (
-                <Image
-                  src={project.image}
-                  alt={`${project.title} preview`}
-                  width={300}
-                  height={200}
-                  className="object-cover rounded-lg mb-4"
-                />
-              )}
-              <h4 className="text-xl font-mono font-semibold text-white mb-2">
-                {project.title}
-              </h4>
-              <p className="text-sm font-mono font-medium text-gray-300 mb-4 text-center">
-                {project.techstack}
-              </p>
-              <Button asChild>
-                <Link href={project.github} className="text-white">
-                  View on GitHub
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+            {projects.map((project, index) => (
+              <Card
+                key={index}
+                className="
+                  w-full
+                  bg-black bg-opacity-70 border-none
+                  transform transition-all duration-300 hover:scale-105
+                  snap-center
+                "
+              >
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  {project.image && (
+                    <div className="w-full h-48 relative mb-4">
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        fill
+                        className="object-cover rounded-lg border-2 border-gray-300"
+                      />
+                    </div>
+                  )}
+                  <h4 className="text-xl font-mono font-semibold text-white mb-2 text-center">
+                    {project.title}
+                  </h4>
+                  <p className="text-sm font-mono font-medium text-gray-300 mb-4 text-center">
+                    {project.techstack}
+                  </p>
+                  <Link
+                    href={project.github}
+                    className="text-white bg-cyan-500 hover:bg-cyan-600 px-4 py-2 rounded-lg w-full text-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on GitHub
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
